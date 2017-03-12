@@ -37,11 +37,38 @@
 										<h1>Injection</h1>
 									</header>
 
-									<span class="image main"><img src="images/pic11.jpg" alt="" /></span>
+									<span class="image main"><img src="images/1-big.png" alt="" /></span>
 
-									<p>Donec eget ex magna. Interdum et malesuada fames ac ante ipsum primis in faucibus. Pellentesque venenatis dolor imperdiet dolor mattis sagittis. Praesent rutrum sem diam, vitae egestas enim auctor sit amet. Pellentesque leo mauris, consectetur id ipsum sit amet, fergiat. Pellentesque in mi eu massa lacinia malesuada et a elit. Donec urna ex, lacinia in purus ac, pretium pulvinar mauris. Curabitur sapien risus, commodo eget turpis at, elementum convallis elit. Pellentesque enim turpis, hendrerit.</p>
-									<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis dapibus rutrum facilisis. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Etiam tristique libero eu nibh porttitor fermentum. Nullam venenatis erat id vehicula viverra. Nunc ultrices eros ut ultricies condimentum. Mauris risus lacus, blandit sit amet venenatis non, bibendum vitae dolor. Nunc lorem mauris, fringilla in aliquam at, euismod in lectus. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. In non lorem sit amet elit placerat maximus. Pellentesque aliquam maximus risus, vel sed vehicula.</p>
-									<p>Interdum et malesuada fames ac ante ipsum primis in faucibus. Pellentesque venenatis dolor imperdiet dolor mattis sagittis. Praesent rutrum sem diam, vitae egestas enim auctor sit amet. Pellentesque leo mauris, consectetur id ipsum sit amet, fersapien risus, commodo eget turpis at, elementum convallis elit. Pellentesque enim turpis, hendrerit tristique lorem ipsum dolor.</p>
+									<p>Injection is used by an attacker to introduce (or "inject") code into a vulnerable computer program and change the course of execution.</p>
+									<p>Injection flaws occur when an application sends untrusted data to an interpreter. Injection flaws are very prevalent, particularly in legacy code. They are often found in SQL, LDAP, Xpath, or NoSQL queries; OS commands; XML parsers, SMTP Headers, program arguments, etc. Injection flaws are easy to discover when examining code, but frequently hard to discover via testing.</p>
+									<p>Injection can result in data loss or corruption, lack of accountability, or denial of access. Injection can sometimes lead to complete host takeover.</p>
+									<p>The best way to find out if an application is vulnerable to injection is to verify that all use of interpreters clearly separates untrusted data from the command or query. For SQL calls, this means using bind variables in all prepared statements and stored procedures, and avoiding dynamic queries.</p>
+									
+									<h4>Types of Injection</h4>
+									<ol class="alt">
+										<li><strong>SQL Injection</strong>
+											<p>Consider the following Query, in a web page with two inputs: username and password.</p>
+<pre><code>SELECT UserList.Username
+FROM UserList
+WHERE UserList.Username = 'Username'
+AND UserList.Password = 'Password'
+</code></pre>
+<p>If this query returns any rows, then access is granted. However, if the malicious user enters a valid Username and injects some valid code <code> (password' OR '1'='1) </code> in the Password field, then the resulting query will look like this:</p>
+<pre><code>SELECT UserList.Username
+FROM UserList
+WHERE UserList.Username = 'Username'
+AND UserList.Password = 'password' OR '1'='1'
+</code></pre>
+<p>This query will possibly return many rows, and access will be granted</p>
+
+										</li>
+										<li><strong> HTML script injection</strong></li>
+										<li><strong> Dynamic evaluation vulnerabilities</strong></li>
+										<li><strong> Object injection</strong></li>
+										<li><strong> Remote file injection</strong></li>
+										<li><strong> Format Specifier Injection</strong></li>
+										<li><strong> Shell injection</strong></li>
+									</ol>
 
 									<hr class="major" />
 
