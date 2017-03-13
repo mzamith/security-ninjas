@@ -34,32 +34,77 @@
 							<!-- Content -->
 								<section>
 									<header class="main">
-										<h1>Generic</h1>
+										<h1>Ninjas in Action</h1>
 									</header>
 
 									<span class="image main"><img src="images/pic11.jpg" alt="" /></span>
 
-									<p>Donec eget ex magna. Interdum et malesuada fames ac ante ipsum primis in faucibus. Pellentesque venenatis dolor imperdiet dolor mattis sagittis. Praesent rutrum sem diam, vitae egestas enim auctor sit amet. Pellentesque leo mauris, consectetur id ipsum sit amet, fergiat. Pellentesque in mi eu massa lacinia malesuada et a elit. Donec urna ex, lacinia in purus ac, pretium pulvinar mauris. Curabitur sapien risus, commodo eget turpis at, elementum convallis elit. Pellentesque enim turpis, hendrerit.</p>
-									<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis dapibus rutrum facilisis. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Etiam tristique libero eu nibh porttitor fermentum. Nullam venenatis erat id vehicula viverra. Nunc ultrices eros ut ultricies condimentum. Mauris risus lacus, blandit sit amet venenatis non, bibendum vitae dolor. Nunc lorem mauris, fringilla in aliquam at, euismod in lectus. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. In non lorem sit amet elit placerat maximus. Pellentesque aliquam maximus risus, vel sed vehicula.</p>
-									<p>Interdum et malesuada fames ac ante ipsum primis in faucibus. Pellentesque venenatis dolor imperdiet dolor mattis sagittis. Praesent rutrum sem diam, vitae egestas enim auctor sit amet. Pellentesque leo mauris, consectetur id ipsum sit amet, fersapien risus, commodo eget turpis at, elementum convallis elit. Pellentesque enim turpis, hendrerit tristique lorem ipsum dolor.</p>
+									<p></p>
+									<p></p>
 
 									<hr class="major" />
 
-									<h2>Interdum sed dapibus</h2>
-									<p>Donec eget ex magna. Interdum et malesuada fames ac ante ipsum primis in faucibus. Pellentesque venenatis dolor imperdiet dolor mattis sagittis. Praesent rutrum sem diam, vitae egestas enim auctor sit amet. Pellentesque leo mauris, consectetur id ipsum sit amet, fergiat. Pellentesque in mi eu massa lacinia malesuada et a elit. Donec urna ex, lacinia in purus ac, pretium pulvinar mauris. Curabitur sapien risus, commodo eget turpis at, elementum convallis elit. Pellentesque enim turpis, hendrerit.</p>
-									<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis dapibus rutrum facilisis. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Etiam tristique libero eu nibh porttitor fermentum. Nullam venenatis erat id vehicula viverra. Nunc ultrices eros ut ultricies condimentum. Mauris risus lacus, blandit sit amet venenatis non, bibendum vitae dolor. Nunc lorem mauris, fringilla in aliquam at, euismod in lectus. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. In non lorem sit amet elit placerat maximus. Pellentesque aliquam maximus risus, vel sed vehicula. Interdum et malesuada fames ac ante ipsum primis in faucibus. Pellentesque venenatis dolor imperdiet dolor mattis sagittis. Praesent rutrum sem diam, vitae egestas enim auctor sit amet. Pellentesque leo mauris, consectetur id ipsum sit amet, fersapien risus, commodo eget turpis at, elementum convallis elit. Pellentesque enim turpis, hendrerit tristique lorem ipsum dolor.</p>
+									<h2>Docker</h2>
+									<p>Docker is the world's leading software container platform. Developers use Docker to eliminate "works on my machine" problems when collaborating on code with co-workers - <i>in <a href="http://www.docker.com/what-docker" target="_blank"> docker website</a></i></p>
+									<p>We will use it to host the Security Ninjas application.</p>
+                                    <p>Follow the next steps in order to install it.</p>
+                                    <ol>
+                                        <li>Download Docker</li>
+                                            <ul>
+                                                <li>If you're a Mac user, download <a href="http://www.docker.com/docker-mac" target="_blank">here</a></li>
+                                                <li>If you're a Windows user, download <a href="http://www.docker.com/docker-windows" target="_blank">here</a></li>
+                                                <li>If you're a Linux user (Ubuntu), download <a href="http://www.docker.com/docker-ubuntu" target="_blank">here</a></li>
+                                            </ul>
+                                        <li>Follow the instructions given in Docker to install it</li>
+                                        <li>Verify docker was installed correctly</li>
+                                            <ul>
+                                                <li>For Mac/Linux users simply open terminal and type <i>docker version</i></li>
+                                                <li>For Windows users open command line and type <i>docker version.</i>Make sure docker directory is in $PATH</li>
+                                            </ul>
+                                        <li>If everything went well, you should have Docker installed as of now</li>
+                                        <li>Start the Security Ninjas application by running on terminal <i>docker run -d -p 8899:80 opendns/security-ninjas</i></li>
+                                        <li>Go to your web browser and enter <i>localhost:8899</i></li>
+                                        <li>The training should be running and you should see its home page in your browser</li>
+                                        <li>After your done with it, kill your container by typing in your terminal, by order:</li>
+                                            <ul>
+                                                <li><i>docker ps</i></li>
+                                                <li>Get the container ID</li>
+                                                <li>Run <i>docker kill {container ID}</i></li>
+                                            </ul>
+                                        <li>Proceed to Firefox</li>
+                                    </ol>
 
 									<hr class="major" />
 
-									<h2>Magna etiam veroeros</h2>
-									<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis dapibus rutrum facilisis. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Etiam tristique libero eu nibh porttitor fermentum. Nullam venenatis erat id vehicula viverra. Nunc ultrices eros ut ultricies condimentum. Mauris risus lacus, blandit sit amet venenatis non, bibendum vitae dolor. Nunc lorem mauris, fringilla in aliquam at, euismod in lectus. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. In non lorem sit amet elit placerat maximus. Pellentesque aliquam maximus risus, vel sed vehicula.</p>
-									<p>Interdum et malesuada fames ac ante ipsum primis in faucibus. Pellentesque venenatis dolor imperdiet dolor mattis sagittis. Praesent rutrum sem diam, vitae egestas enim auctor sit amet. Pellentesque leo mauris, consectetur id ipsum sit amet, fersapien risus, commodo eget turpis at, elementum convallis elit. Pellentesque enim turpis, hendrerit tristique lorem ipsum dolor.</p>
+									<h2>Firefox</h2>
+									<p>This step is optional though recommended. Choose at your own will!</p>
+									<p>You can download it <a href="http://www.mozilla.org/pt-PT/firefox/new" target="_blank">here</a></p>
+                                    <ul>
+                                        <li>In case you decided to install it, proceed to FoxyProxy</li>
+                                        <li>If you haven't proceed to Burp Suite section</li>
+                                    </ul>
 
 									<hr class="major" />
 
-									<h2>Lorem aliquam bibendum</h2>
-									<p>Donec eget ex magna. Interdum et malesuada fames ac ante ipsum primis in faucibus. Pellentesque venenatis dolor imperdiet dolor mattis sagittis. Praesent rutrum sem diam, vitae egestas enim auctor sit amet. Pellentesque leo mauris, consectetur id ipsum sit amet, fergiat. Pellentesque in mi eu massa lacinia malesuada et a elit. Donec urna ex, lacinia in purus ac, pretium pulvinar mauris. Curabitur sapien risus, commodo eget turpis at, elementum convallis elit. Pellentesque enim turpis, hendrerit.</p>
-									<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis dapibus rutrum facilisis. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Etiam tristique libero eu nibh porttitor fermentum. Nullam venenatis erat id vehicula viverra. Nunc ultrices eros ut ultricies condimentum. Mauris risus lacus, blandit sit amet venenatis non, bibendum vitae dolor. Nunc lorem mauris, fringilla in aliquam at, euismod in lectus. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. In non lorem sit amet elit placerat maximus. Pellentesque aliquam maximus risus, vel sed vehicula.</p>
+									<h2>FoxyProxy</h2>
+									<p>This step is also optional though recommended if you use Firefox. Choose at your own will!</p>
+									<p>In case you chose to install Firefox please follow the next steps.</p>
+                                    <ol>
+                                        <li>Install the FoxyProxy plugin for Firefox from <a href="https://addons.mozilla.org/pt-pt/firefox/addon/foxyproxy-standard/" target="_blank">here</a></li>
+                                        <li>After installation open FoxyProxy settings</li>
+                                            <ul>
+                                                <li>In select mode: Use proxy "Default" for all URLs</li>
+                                                <li>Configure the Default proxy to use 127.0.0.1:8080</li>
+                                                <li>You can delete or disable the plugin after the exercise</li>
+                                            </ul>
+                                        <li>Proceed to Burp Suite</li>
+                                    </ol>
+                                    
+                                    <hr class="major" />
+
+									<h2>Burp Suite</h2>
+									<p></p>
+									<p></p>
 
 								</section>
 
