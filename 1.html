@@ -27,7 +27,7 @@
 								<header id="header">
 									<a class="logo"><strong>1.</strong> Injection</a>
 									<ul class="icons">
-										<li><a href="https://github.com/mzamith/security-ninjas" class="icon fa-github"><span class="label">Hithub</span></a></li>
+										<li><a href="https://github.com/mzamith/security-ninjas" class="icon fa-github"><span class="label">Github</span></a></li>
 									</ul>
 								</header>
 
@@ -48,19 +48,18 @@
 									<ol class="alt">
 										<li><strong>SQL Injection</strong>
 											<p>Consider the following Query, in a web page with two inputs: username and password.</p>
-<pre><code>SELECT UserList.Username
-FROM UserList
-WHERE UserList.Username = 'Username'
-AND UserList.Password = 'Password'
-</code></pre>
-<p>If this query returns any rows, then access is granted. However, if the malicious user enters a valid Username and injects some valid code <code> (password' OR '1'='1) </code> in the Password field, then the resulting query will look like this:</p>
-<pre><code>SELECT UserList.Username
-FROM UserList
-WHERE UserList.Username = 'Username'
-AND UserList.Password = 'password' OR '1'='1'
-</code></pre>
-<p>This query will possibly return many rows, and access will be granted</p>
-
+												<pre><code>SELECT UserList.Username
+												FROM UserList
+												WHERE UserList.Username = 'Username'
+												AND UserList.Password = 'Password'
+												</code></pre>
+												<p>If this query returns any rows, then access is granted. However, if the malicious user enters a valid Username and injects some valid code <code> (password' OR '1'='1) </code> in the Password field, then the resulting query will look like this:</p>
+												<pre><code>SELECT UserList.Username
+												FROM UserList
+												WHERE UserList.Username = 'Username'
+												AND UserList.Password = 'password' OR '1'='1'
+												</code></pre>
+												<p>This query will possibly return many rows, and access will be granted</p>
 										</li>
 										<li><strong> HTML script injection</strong></li>
 										<li><strong> Dynamic evaluation vulnerabilities</strong></li>
