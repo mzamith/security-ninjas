@@ -6,11 +6,12 @@
 -->
 <html>
 	<head>
-		<title>2</title>
+		<title>Broken Authentication &amp; Session Management</title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<!--[if lte IE 8]><script src="assets/js/ie/html5shiv.js"></script><![endif]-->
 		<link rel="stylesheet" href="assets/css/main.css" />
+		<link rel="stylesheet" href="assets/css/styles.css" />
 		<!--[if lte IE 9]><link rel="stylesheet" href="assets/css/ie9.css" /><![endif]-->
 		<!--[if lte IE 8]><link rel="stylesheet" href="assets/css/ie8.css" /><![endif]-->
 	</head>
@@ -39,27 +40,54 @@
 
 									<span class="image main"><img src="images/2-big.png" alt="" /></span>
 
-									<p>Donec eget ex magna. Interdum et malesuada fames ac ante ipsum primis in faucibus. Pellentesque venenatis dolor imperdiet dolor mattis sagittis. Praesent rutrum sem diam, vitae egestas enim auctor sit amet. Pellentesque leo mauris, consectetur id ipsum sit amet, fergiat. Pellentesque in mi eu massa lacinia malesuada et a elit. Donec urna ex, lacinia in purus ac, pretium pulvinar mauris. Curabitur sapien risus, commodo eget turpis at, elementum convallis elit. Pellentesque enim turpis, hendrerit.</p>
-									<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis dapibus rutrum facilisis. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Etiam tristique libero eu nibh porttitor fermentum. Nullam venenatis erat id vehicula viverra. Nunc ultrices eros ut ultricies condimentum. Mauris risus lacus, blandit sit amet venenatis non, bibendum vitae dolor. Nunc lorem mauris, fringilla in aliquam at, euismod in lectus. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. In non lorem sit amet elit placerat maximus. Pellentesque aliquam maximus risus, vel sed vehicula.</p>
-									<p>Interdum et malesuada fames ac ante ipsum primis in faucibus. Pellentesque venenatis dolor imperdiet dolor mattis sagittis. Praesent rutrum sem diam, vitae egestas enim auctor sit amet. Pellentesque leo mauris, consectetur id ipsum sit amet, fersapien risus, commodo eget turpis at, elementum convallis elit. Pellentesque enim turpis, hendrerit tristique lorem ipsum dolor.</p>
+									<p>With the lightning growth of the internet-driven application in today's world it's imperative to manage
+										usernames and passwords. Not also because the exponentially growth in data, mobile and cloud tecnhologies, but also
+										because the increment of security breaches happening every other day. Subsequently this topic has become more
+										advanced to protect the data, systems and networks that everyone relies on.
+									</p>
+
+									<p>Although all the efforts that are being made, this is nowhere near perfect, inasmuch as since 2004 Broken Authentication &amp;
+										Session Management has always stayed on the OWASP Top 10.
+									</p>
+
+									<p>This type of flaws can be extremely serious not only because putting business at very high risk,
+										lose confidential data is an option, but also because it can lead to openning of backdoors, to malicious attackers, on the entire company.
+										Attackers, internal or external, can take advantage of this flaws in order to steal accounts and impersonate users. Once hijacked, as the attacker
+										has the ability to do anything that the hijacked user could do, it can result in serious consequences affecting the company's viability/credibility.
+									</p>
 
 									<hr class="major" />
 
-									<h2>Interdum sed dapibus</h2>
-									<p>Donec eget ex magna. Interdum et malesuada fames ac ante ipsum primis in faucibus. Pellentesque venenatis dolor imperdiet dolor mattis sagittis. Praesent rutrum sem diam, vitae egestas enim auctor sit amet. Pellentesque leo mauris, consectetur id ipsum sit amet, fergiat. Pellentesque in mi eu massa lacinia malesuada et a elit. Donec urna ex, lacinia in purus ac, pretium pulvinar mauris. Curabitur sapien risus, commodo eget turpis at, elementum convallis elit. Pellentesque enim turpis, hendrerit.</p>
-									<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis dapibus rutrum facilisis. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Etiam tristique libero eu nibh porttitor fermentum. Nullam venenatis erat id vehicula viverra. Nunc ultrices eros ut ultricies condimentum. Mauris risus lacus, blandit sit amet venenatis non, bibendum vitae dolor. Nunc lorem mauris, fringilla in aliquam at, euismod in lectus. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. In non lorem sit amet elit placerat maximus. Pellentesque aliquam maximus risus, vel sed vehicula. Interdum et malesuada fames ac ante ipsum primis in faucibus. Pellentesque venenatis dolor imperdiet dolor mattis sagittis. Praesent rutrum sem diam, vitae egestas enim auctor sit amet. Pellentesque leo mauris, consectetur id ipsum sit amet, fersapien risus, commodo eget turpis at, elementum convallis elit. Pellentesque enim turpis, hendrerit tristique lorem ipsum dolor.</p>
+									<h2>Is my application vulnerable to this flaw?</h2>
+									<p>Based on OWASP list your application is considered to be vulnerable when it complies with the following topics.</p>
+									<ul>
+										<li>User authentication credentials aren't protected using hashing or encryption when storing. May lead to <a href="6.html" target="_blank">Sensitive Data Exposure</a></li>
+										<li>Credentials can be guessed or overwritten through weak account management functions (e.g., account creations, password changing, password recovering, weak session IDs)</li>
+										<li>Session IDs are exposed in the URL (e.g., URL rewriting)</li>
+										<li>Session IDs are vulnerable to session fixation attacks</li>
+										<li>Session IDs don't timeout, or user sessions or authentication tokens, particularly single sign-on (SSO) tokens, aren't properly invalidated during logout</li>
+										<li>Session IDs aren't rotated after succesful login</li>
+										<li>Session IDs, passwords, and other credentials are sent over unencrypted connection. May lead to <a href="6.html" target="_blank">Sensitive Data Exposure</a></li>
+									</ul>
 
 									<hr class="major" />
 
-									<h2>Magna etiam veroeros</h2>
+									<h2>Security Ninjas Resolution</h2>
 									<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis dapibus rutrum facilisis. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Etiam tristique libero eu nibh porttitor fermentum. Nullam venenatis erat id vehicula viverra. Nunc ultrices eros ut ultricies condimentum. Mauris risus lacus, blandit sit amet venenatis non, bibendum vitae dolor. Nunc lorem mauris, fringilla in aliquam at, euismod in lectus. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. In non lorem sit amet elit placerat maximus. Pellentesque aliquam maximus risus, vel sed vehicula.</p>
-									<p>Interdum et malesuada fames ac ante ipsum primis in faucibus. Pellentesque venenatis dolor imperdiet dolor mattis sagittis. Praesent rutrum sem diam, vitae egestas enim auctor sit amet. Pellentesque leo mauris, consectetur id ipsum sit amet, fersapien risus, commodo eget turpis at, elementum convallis elit. Pellentesque enim turpis, hendrerit tristique lorem ipsum dolor.</p>
 
 									<hr class="major" />
 
-									<h2>Lorem aliquam bibendum</h2>
-									<p>Donec eget ex magna. Interdum et malesuada fames ac ante ipsum primis in faucibus. Pellentesque venenatis dolor imperdiet dolor mattis sagittis. Praesent rutrum sem diam, vitae egestas enim auctor sit amet. Pellentesque leo mauris, consectetur id ipsum sit amet, fergiat. Pellentesque in mi eu massa lacinia malesuada et a elit. Donec urna ex, lacinia in purus ac, pretium pulvinar mauris. Curabitur sapien risus, commodo eget turpis at, elementum convallis elit. Pellentesque enim turpis, hendrerit.</p>
-									<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis dapibus rutrum facilisis. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Etiam tristique libero eu nibh porttitor fermentum. Nullam venenatis erat id vehicula viverra. Nunc ultrices eros ut ultricies condimentum. Mauris risus lacus, blandit sit amet venenatis non, bibendum vitae dolor. Nunc lorem mauris, fringilla in aliquam at, euismod in lectus. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. In non lorem sit amet elit placerat maximus. Pellentesque aliquam maximus risus, vel sed vehicula.</p>
+									<h2>How to prevent it</h2>
+									<p>Following OWASP recommendations, should be available:</p>
+									<ul>
+										<li>A single set of strong authentication and session management controls that should strive to:</li>
+										<ol>
+											<br />
+											<li>Meet all the context requirements defined in OWASP Application Security Verification Standard <a href="https://www.owasp.org/index.php/Category:OWASP_Application_Security_Verification_Standard_Project">(ASVS)</a> areas V2 (Authentication) and V3 (Session Management)</li>
+											<li>Have a simple interface for developers. Consider using <a href="https://github.com/ESAPI">ESAPI Authenticator and User APIs</a></li>
+										</ol>
+										<li>Strive to avoid XSS flaws that can be used to steal session IDs. See <a href="3.html" target="_blank">Cross-Site Scripting</a> </li>
+									</ul>
 
 								</section>
 
