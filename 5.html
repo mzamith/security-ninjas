@@ -41,16 +41,17 @@
 
 									<p>Security misconfiguration vulnerabilities could occur if a component is susceptible to attack due to an insecure configuration option. These vulnerabilities often occur due to insecure default configuration, poorly documented default configuration, or poorly documented side-effects of optional configuration. This could range from failing to set a useful security header on a web server, to forgetting to disable default platform functionality that could grant administrative access to an attacker.</p>
 									<p>Good security requires having a secure configuration defined and deployed for the application, frameworks, application server, web server, database server, and platform. Secure settings should be defined, implemented, and maintained, as defaults are often insecure. Additionally, software should be kept up to date.</p>
-									<p>Imagine the following Scenario as an examomple:</p>
+									<p>Imagine the following Scenario as an example:</p>
 									<p>Directory listing is not disabled on your server. Attacker discovers she can simply list directories to find any file. Attacker finds and downloads all your compiled Java classes, which she decompiles and reverse engineers to get all your custom code. She then finds a serious access control flaw in your application.</p>
 								
 									<hr class="major" />
 
-									<h2>SECURITY NINJAS</h2>
+									<h2>Solving the riddle</h2>
 									<img src="gifs/security.gif" alt="Broken Authentication &amp; Session Management Resolution">
 									
-									<p>Donec eget ex magna. Interdum et malesuada fames ac ante ipsum primis in faucibus. Pellentesque venenatis dolor imperdiet dolor mattis sagittis. Praesent rutrum sem diam, vitae egestas enim auctor sit amet. Pellentesque leo mauris, consectetur id ipsum sit amet, fergiat. Pellentesque in mi eu massa lacinia malesuada et a elit. Donec urna ex, lacinia in purus ac, pretium pulvinar mauris. Curabitur sapien risus, commodo eget turpis at, elementum convallis elit. Pellentesque enim turpis, hendrerit.</p>
-									<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis dapibus rutrum facilisis. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Etiam tristique libero eu nibh porttitor fermentum. Nullam venenatis erat id vehicula viverra. Nunc ultrices eros ut ultricies condimentum. Mauris risus lacus, blandit sit amet venenatis non, bibendum vitae dolor. Nunc lorem mauris, fringilla in aliquam at, euismod in lectus. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. In non lorem sit amet elit placerat maximus. Pellentesque aliquam maximus risus, vel sed vehicula. Interdum et malesuada fames ac ante ipsum primis in faucibus. Pellentesque venenatis dolor imperdiet dolor mattis sagittis. Praesent rutrum sem diam, vitae egestas enim auctor sit amet. Pellentesque leo mauris, consectetur id ipsum sit amet, fersapien risus, commodo eget turpis at, elementum convallis elit. Pellentesque enim turpis, hendrerit tristique lorem ipsum dolor.</p>
+									<p>Security Misconfiguration is a tricky vulnerability to figure out. On this exercise, the first thing that comes to attention is that the selected imaged is passed as a parameter through the <code>fname</code> parameter. </p>
+									<p>It's a good bet that we have to try to manipulate this parameter to access some poorly protected server-side configuration</p>
+									<p>If we try to access the server's directory tree, we can access the passwd folder, just insert <code>../../../../../etc/passwd</code> in the URL, in the fname parameter!</p>
 
 									<hr class="major" />
 
