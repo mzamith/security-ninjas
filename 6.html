@@ -11,6 +11,7 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<!--[if lte IE 8]><script src="assets/js/ie/html5shiv.js"></script><![endif]-->
 		<link rel="stylesheet" href="assets/css/main.css" />
+		<link rel="stylesheet" href="assets/css/styles.css">
 		<!--[if lte IE 9]><link rel="stylesheet" href="assets/css/ie9.css" /><![endif]-->
 		<!--[if lte IE 8]><link rel="stylesheet" href="assets/css/ie8.css" /><![endif]-->
 	</head>
@@ -25,7 +26,7 @@
 
 							<!-- Header -->
 								<header id="header">
-									<a class="logo"><strong>6.</strong> Sensitive Data Exposure</a>
+									<a class="logo"><strong>6.</strong>Sensitive Data Exposure</a>
 									<ul class="icons">
 										<li><a href="https://github.com/mzamith/security-ninjas" class="icon fa-github"><span class="label">Github</span></a></li>
 									</ul>
@@ -39,25 +40,38 @@
 
 									<span class="image main"><img src="images/6-big.png" alt="" /></span>
 
+									<p>This vulnerability can occur when an application does not, adequately, protect sensitive data such as passwords, sessions tokens, credit card data and more, from being leaked.</p>
+
+									<hr class="major" />
+
+									<h2>Is my application vulnerable to this flaw?</h2>
+									<p>First there's a need to determine which data is sensitive enough to require extra protection.</p>
+									<p>For this type of data consider the following:</p>
+									<ul>
+										<li>Is any of this data stored in clear text, including backups?</li>
+										<li>Is any of this data transmitted in clear text, either internally or externally?</li>
+										<li>Are any old/weak cryptographic algorithms used?</li>
+										<li>Are weak cryptographic keys generated, or is proper key management or rotation missing?</li>
+										<li>Are any browser security directives or headers missing when sensitive data is provided by/sent to the browser?</li>
+										<li>For more information visit <a href="http://www.owasp.org/index.php/ASVS" target="_blank">ASVS Crypto, Data Protection, SSL</a></li>
+									</ul>
+
+									<hr class="major" />
+
+									<h2>Security Ninjas Resolution</h2>
 									<p></p>
 
 									<hr class="major" />
 
-									<h2>Interdum sed dapibus</h2>
-									<p>Donec eget ex magna. Interdum et malesuada fames ac ante ipsum primis in faucibus. Pellentesque venenatis dolor imperdiet dolor mattis sagittis. Praesent rutrum sem diam, vitae egestas enim auctor sit amet. Pellentesque leo mauris, consectetur id ipsum sit amet, fergiat. Pellentesque in mi eu massa lacinia malesuada et a elit. Donec urna ex, lacinia in purus ac, pretium pulvinar mauris. Curabitur sapien risus, commodo eget turpis at, elementum convallis elit. Pellentesque enim turpis, hendrerit.</p>
-									<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis dapibus rutrum facilisis. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Etiam tristique libero eu nibh porttitor fermentum. Nullam venenatis erat id vehicula viverra. Nunc ultrices eros ut ultricies condimentum. Mauris risus lacus, blandit sit amet venenatis non, bibendum vitae dolor. Nunc lorem mauris, fringilla in aliquam at, euismod in lectus. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. In non lorem sit amet elit placerat maximus. Pellentesque aliquam maximus risus, vel sed vehicula. Interdum et malesuada fames ac ante ipsum primis in faucibus. Pellentesque venenatis dolor imperdiet dolor mattis sagittis. Praesent rutrum sem diam, vitae egestas enim auctor sit amet. Pellentesque leo mauris, consectetur id ipsum sit amet, fersapien risus, commodo eget turpis at, elementum convallis elit. Pellentesque enim turpis, hendrerit tristique lorem ipsum dolor.</p>
-
-									<hr class="major" />
-
-									<h2>Magna etiam veroeros</h2>
-									<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis dapibus rutrum facilisis. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Etiam tristique libero eu nibh porttitor fermentum. Nullam venenatis erat id vehicula viverra. Nunc ultrices eros ut ultricies condimentum. Mauris risus lacus, blandit sit amet venenatis non, bibendum vitae dolor. Nunc lorem mauris, fringilla in aliquam at, euismod in lectus. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. In non lorem sit amet elit placerat maximus. Pellentesque aliquam maximus risus, vel sed vehicula.</p>
-									<p>Interdum et malesuada fames ac ante ipsum primis in faucibus. Pellentesque venenatis dolor imperdiet dolor mattis sagittis. Praesent rutrum sem diam, vitae egestas enim auctor sit amet. Pellentesque leo mauris, consectetur id ipsum sit amet, fersapien risus, commodo eget turpis at, elementum convallis elit. Pellentesque enim turpis, hendrerit tristique lorem ipsum dolor.</p>
-
-									<hr class="major" />
-
-									<h2>Lorem aliquam bibendum</h2>
-									<p>Donec eget ex magna. Interdum et malesuada fames ac ante ipsum primis in faucibus. Pellentesque venenatis dolor imperdiet dolor mattis sagittis. Praesent rutrum sem diam, vitae egestas enim auctor sit amet. Pellentesque leo mauris, consectetur id ipsum sit amet, fergiat. Pellentesque in mi eu massa lacinia malesuada et a elit. Donec urna ex, lacinia in purus ac, pretium pulvinar mauris. Curabitur sapien risus, commodo eget turpis at, elementum convallis elit. Pellentesque enim turpis, hendrerit.</p>
-									<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis dapibus rutrum facilisis. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Etiam tristique libero eu nibh porttitor fermentum. Nullam venenatis erat id vehicula viverra. Nunc ultrices eros ut ultricies condimentum. Mauris risus lacus, blandit sit amet venenatis non, bibendum vitae dolor. Nunc lorem mauris, fringilla in aliquam at, euismod in lectus. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. In non lorem sit amet elit placerat maximus. Pellentesque aliquam maximus risus, vel sed vehicula.</p>
+									<h2>How to prevent</h2>
+									<p>Trying to prevent this kind of flaws the following set of rules should be met.</p>
+									<ul>	
+										<li>Make sure all sensitive data is encrypted either stored or being transmitted in a way that it's secure agains this kind of threads.</li>
+										<li>Don't store sensitive data unnecessarily. Discard it <i>ASAP</i>. If you don't have it, it can't be stolen.</li>
+										<li>Ensure strong standard algorithms and strong keys are used. Proper key management is also to be used.</li>
+										<li>Ensure passwords are stored with a specifically designed algorithm. Check <a href="http://en.wikipedia.org/wiki/PBKDF2" target="_blank">PBKDF2</a></li>
+										<li>Disable autocomplete on forms collecting sensitive data and disable caching for pages that contain sensitive data.</li>
+									</ul>
 
 								</section>
 
