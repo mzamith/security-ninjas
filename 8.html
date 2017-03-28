@@ -25,7 +25,7 @@
 
 							<!-- Header -->
 								<header id="header">
-									<a class="logo"><strong>8.</strong>Cross Site Request Forgery Attacks (CSRF)</a>
+									<a class="logo"><strong>8.</strong> Cross Site Request Forgery Attacks (CSRF)</a>
 									<ul class="icons">
 										<li><a href="https://github.com/mzamith/security-ninjas" class="icon fa-github"><span class="label">Github</span></a></li>
 									</ul>
@@ -39,25 +39,40 @@
 
 									<span class="image main"><img src="images/8-big.png" alt="" /></span>
 
+									<p>Also known as CSRF, this is an attack that forces a currently authenticated user to perform unwanted actions in the system, without his knowledge.</p>
+									<p>While in <a href="3.html">XSS</a> the attacker exploits the trust a user has for a website, with CSRF on the other hand, the attacker exploits the trust a website has against a user's browser.</p>
+									<p>This works by tricking a victim into accessing a website or clicking an URL link that contains malicious or unauthorized requests.</p>
+									<h4>Bank transaction example</h4>
+									<h5>Wrapped in HREF</h5>
+									<code>
+										&lt;a href&#61;http://example.bank/transfer.aspx?acct=MALICIOUS&amp;amount&#61;AMOUNT&gt;Click to watch video!&lt;/a&gt;
+									</code>
 									<p></p>
+									<h5>Wrapped in Image</h5>
+									<code>
+										&lt;img src&#61;http://example.bank/transfer.aspx?acct=MALICIOUS&amp;amount&#61;AMOUNT&gt;										
+									</code>
 
 									<hr class="major" />
 
-									<h2>Interdum sed dapibus</h2>
-									<p>Donec eget ex magna. Interdum et malesuada fames ac ante ipsum primis in faucibus. Pellentesque venenatis dolor imperdiet dolor mattis sagittis. Praesent rutrum sem diam, vitae egestas enim auctor sit amet. Pellentesque leo mauris, consectetur id ipsum sit amet, fergiat. Pellentesque in mi eu massa lacinia malesuada et a elit. Donec urna ex, lacinia in purus ac, pretium pulvinar mauris. Curabitur sapien risus, commodo eget turpis at, elementum convallis elit. Pellentesque enim turpis, hendrerit.</p>
-									<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis dapibus rutrum facilisis. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Etiam tristique libero eu nibh porttitor fermentum. Nullam venenatis erat id vehicula viverra. Nunc ultrices eros ut ultricies condimentum. Mauris risus lacus, blandit sit amet venenatis non, bibendum vitae dolor. Nunc lorem mauris, fringilla in aliquam at, euismod in lectus. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. In non lorem sit amet elit placerat maximus. Pellentesque aliquam maximus risus, vel sed vehicula. Interdum et malesuada fames ac ante ipsum primis in faucibus. Pellentesque venenatis dolor imperdiet dolor mattis sagittis. Praesent rutrum sem diam, vitae egestas enim auctor sit amet. Pellentesque leo mauris, consectetur id ipsum sit amet, fersapien risus, commodo eget turpis at, elementum convallis elit. Pellentesque enim turpis, hendrerit tristique lorem ipsum dolor.</p>
+									<h2>Is my application vulnerable to this flaw?</h2>
+									<p>Some guidelines to check if your application is vulnerable or not is, for starters, to check if any link and/or form lack an unpredictable CSRF token. Without it malicious requests can be forged easily.
+										Another one is to implement a functionality where the user has to confirm he wants to do such action, either through reauthentication, CAPTCHA and others.
+									</p>
 
 									<hr class="major" />
 
-									<h2>Magna etiam veroeros</h2>
-									<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis dapibus rutrum facilisis. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Etiam tristique libero eu nibh porttitor fermentum. Nullam venenatis erat id vehicula viverra. Nunc ultrices eros ut ultricies condimentum. Mauris risus lacus, blandit sit amet venenatis non, bibendum vitae dolor. Nunc lorem mauris, fringilla in aliquam at, euismod in lectus. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. In non lorem sit amet elit placerat maximus. Pellentesque aliquam maximus risus, vel sed vehicula.</p>
-									<p>Interdum et malesuada fames ac ante ipsum primis in faucibus. Pellentesque venenatis dolor imperdiet dolor mattis sagittis. Praesent rutrum sem diam, vitae egestas enim auctor sit amet. Pellentesque leo mauris, consectetur id ipsum sit amet, fersapien risus, commodo eget turpis at, elementum convallis elit. Pellentesque enim turpis, hendrerit tristique lorem ipsum dolor.</p>
+									<h2>Security ninjas resolution</h2>
 
 									<hr class="major" />
 
-									<h2>Lorem aliquam bibendum</h2>
-									<p>Donec eget ex magna. Interdum et malesuada fames ac ante ipsum primis in faucibus. Pellentesque venenatis dolor imperdiet dolor mattis sagittis. Praesent rutrum sem diam, vitae egestas enim auctor sit amet. Pellentesque leo mauris, consectetur id ipsum sit amet, fergiat. Pellentesque in mi eu massa lacinia malesuada et a elit. Donec urna ex, lacinia in purus ac, pretium pulvinar mauris. Curabitur sapien risus, commodo eget turpis at, elementum convallis elit. Pellentesque enim turpis, hendrerit.</p>
-									<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis dapibus rutrum facilisis. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Etiam tristique libero eu nibh porttitor fermentum. Nullam venenatis erat id vehicula viverra. Nunc ultrices eros ut ultricies condimentum. Mauris risus lacus, blandit sit amet venenatis non, bibendum vitae dolor. Nunc lorem mauris, fringilla in aliquam at, euismod in lectus. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. In non lorem sit amet elit placerat maximus. Pellentesque aliquam maximus risus, vel sed vehicula.</p>
+									<h2>How to prevent it</h2>
+									<p>Preventing such flaw usually requires that each HTTP request includes a unique per session, at minimum, and unpredictable token.</p>
+									<p>The most preferred option is to send it in a hidden field, thus causing it to be sent in the body of the request, avoiding URL exposeness.
+										You can use <a href="http://www.owasp.org/index.php/CSRFGuard" target="_blank">OWASP's CSRF Guard</a> that automatically include such tokens in Java, .Net or PHP. Also <a href="http://www.owasp.org/index.php/ESAPI" target="_blank">OWASP's ESAPI</a>
+										includes methods that developers can use to prevent CSRF.
+									</p>
+									<p>As stated earlier, requiring the user to reauthenticate, or prove they really want to do a certain action (e.g. CAPTCHA) can also help to protect against CSRF.</p>
 
 								</section>
 
