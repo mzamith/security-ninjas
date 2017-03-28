@@ -39,25 +39,47 @@
 
 									<span class="image main"><img src="images/10-big.png" alt="" /></span>
 
-									<p></p>
+									<p>This flaw occurs when a malicious attacker is able to redirect a user to an untrusted website when a trusted website link is visited.</p>
+									<p>It's also called, often, Open Redirect.</p>
+
+									<h4>Example</h4>
+									<p>Assuming there's a router file somewhere in the system that handles redirects and forwards.</p>
+									<p>A normal request would look like this: <code>https://example.com/router.php?url=example.php</code></p>
+									<p>The code to read this would look the following:
+<pre><code>&lt;?php
+header("Location: ".$_GET["url"]);
+die();
+?&gt;
+</code></pre>
+									</p>
+									<p>However, as there are no checks to what the parameter could be, a malicious attacker would be able to conduct something like the following example:</p>
+									<code>
+										https://example.com/router.php?url=https://phishing.example
+									</code>
 
 									<hr class="major" />
 
-									<h2>Interdum sed dapibus</h2>
-									<p>Donec eget ex magna. Interdum et malesuada fames ac ante ipsum primis in faucibus. Pellentesque venenatis dolor imperdiet dolor mattis sagittis. Praesent rutrum sem diam, vitae egestas enim auctor sit amet. Pellentesque leo mauris, consectetur id ipsum sit amet, fergiat. Pellentesque in mi eu massa lacinia malesuada et a elit. Donec urna ex, lacinia in purus ac, pretium pulvinar mauris. Curabitur sapien risus, commodo eget turpis at, elementum convallis elit. Pellentesque enim turpis, hendrerit.</p>
-									<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis dapibus rutrum facilisis. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Etiam tristique libero eu nibh porttitor fermentum. Nullam venenatis erat id vehicula viverra. Nunc ultrices eros ut ultricies condimentum. Mauris risus lacus, blandit sit amet venenatis non, bibendum vitae dolor. Nunc lorem mauris, fringilla in aliquam at, euismod in lectus. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. In non lorem sit amet elit placerat maximus. Pellentesque aliquam maximus risus, vel sed vehicula. Interdum et malesuada fames ac ante ipsum primis in faucibus. Pellentesque venenatis dolor imperdiet dolor mattis sagittis. Praesent rutrum sem diam, vitae egestas enim auctor sit amet. Pellentesque leo mauris, consectetur id ipsum sit amet, fersapien risus, commodo eget turpis at, elementum convallis elit. Pellentesque enim turpis, hendrerit tristique lorem ipsum dolor.</p>
+									<h2>Is my application vulnerable to this flaw?</h2>
+									<p>According to OWASP, the best way to validate if the application is vulnerable to this type of flaw is to:</p>
+									<ul>
+										<li>Review the code for all usage of redirects and/or forwards. For each validate the input parameter against a whitelist.</li>
+										<li>Spider the site to see if HTTP 300-307, usually 302 code (redirect/forward codes), is generated. For each, change the target and observe the behaviour.</li>
+										<li>If you don't have code access, check all the input parameters to see if they look like part of a redirect or forward URL destination.</li>
+									</ul>
 
 									<hr class="major" />
 
-									<h2>Magna etiam veroeros</h2>
-									<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis dapibus rutrum facilisis. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Etiam tristique libero eu nibh porttitor fermentum. Nullam venenatis erat id vehicula viverra. Nunc ultrices eros ut ultricies condimentum. Mauris risus lacus, blandit sit amet venenatis non, bibendum vitae dolor. Nunc lorem mauris, fringilla in aliquam at, euismod in lectus. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. In non lorem sit amet elit placerat maximus. Pellentesque aliquam maximus risus, vel sed vehicula.</p>
-									<p>Interdum et malesuada fames ac ante ipsum primis in faucibus. Pellentesque venenatis dolor imperdiet dolor mattis sagittis. Praesent rutrum sem diam, vitae egestas enim auctor sit amet. Pellentesque leo mauris, consectetur id ipsum sit amet, fersapien risus, commodo eget turpis at, elementum convallis elit. Pellentesque enim turpis, hendrerit tristique lorem ipsum dolor.</p>
+									<h2>Security Ninjas Resolution</h2>
+									<p>.</p>
 
 									<hr class="major" />
 
-									<h2>Lorem aliquam bibendum</h2>
-									<p>Donec eget ex magna. Interdum et malesuada fames ac ante ipsum primis in faucibus. Pellentesque venenatis dolor imperdiet dolor mattis sagittis. Praesent rutrum sem diam, vitae egestas enim auctor sit amet. Pellentesque leo mauris, consectetur id ipsum sit amet, fergiat. Pellentesque in mi eu massa lacinia malesuada et a elit. Donec urna ex, lacinia in purus ac, pretium pulvinar mauris. Curabitur sapien risus, commodo eget turpis at, elementum convallis elit. Pellentesque enim turpis, hendrerit.</p>
-									<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis dapibus rutrum facilisis. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Etiam tristique libero eu nibh porttitor fermentum. Nullam venenatis erat id vehicula viverra. Nunc ultrices eros ut ultricies condimentum. Mauris risus lacus, blandit sit amet venenatis non, bibendum vitae dolor. Nunc lorem mauris, fringilla in aliquam at, euismod in lectus. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. In non lorem sit amet elit placerat maximus. Pellentesque aliquam maximus risus, vel sed vehicula.</p>
+									<h2>How to prevent it</h2>
+									<p>This might look nonsense but the best way to get rid of this flaw is to avoid the usage of redirects and forwards.
+										Though, if it's imperative to use them, try not to involve user parameters in the destination calculation.
+										In case that this parameters can't be left apart make sure the supplied value is valid and authorized for the user.
+									</p>
+									<p>Avoiding this kind of flaws is extremely important since they're phisers favorite attack to get user's trust.</p>
 
 								</section>
 
